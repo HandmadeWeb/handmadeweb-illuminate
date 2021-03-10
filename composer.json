@@ -1,0 +1,18 @@
+{
+    "require": {
+        "php": "^7.2",
+        "illuminate/database": "^8.29",
+        "illuminate/view": "^8.29"
+    },
+    "autoload": {
+        "psr-4": {
+            "HandmadeWeb\\Illuminate\\": "src"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}
