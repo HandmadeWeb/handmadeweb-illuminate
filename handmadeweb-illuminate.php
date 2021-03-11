@@ -19,4 +19,4 @@ require_once __DIR__.'/classes/DB.php';
 require_once __DIR__.'/classes/LazyCollection.php';
 require_once __DIR__.'/classes/View.php';
 
-add_action('init', [Loader::class, 'boot']);
+add_action('init', [Loader::class, 'boot_views'], 9999);
