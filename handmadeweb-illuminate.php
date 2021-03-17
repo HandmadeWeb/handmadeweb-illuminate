@@ -15,6 +15,3 @@ defined('ABSPATH') || exit;
 require_once __DIR__.'/vendor/autoload.php';
 
 add_action('plugins_loaded', [PluginLoader::class, 'boot'], 1);
-
-var_dump(now());
-exit;
