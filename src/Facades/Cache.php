@@ -19,6 +19,11 @@ class Cache extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        return new DatabaseStore(DB::__getFacadeInstance()->connection(), 'illuminate_cache', $prefix = '', $lockTable = 'cache_locks', $lockLottery = [2, 100]);
+        $prefix = '';
+        $cacheTable = 'illuminate_cache';
+        $lockTable = 'illuminate_cache_locks';
+        $lockLottery = [2, 100];
+
+        return new DatabaseStore(DB::__getFacadeInstance()->connection(), $cacheTable, $prefix, $lockTable, $lockLottery);
     }
 }
