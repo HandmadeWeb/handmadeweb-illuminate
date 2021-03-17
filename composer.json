@@ -8,7 +8,10 @@
     "autoload": {
         "psr-4": {
             "HandmadeWeb\\Illuminate\\": "src"
-        }
+        },
+        "files": [
+            "helpers.php"
+        ]
     },
     "config": {
         "optimize-autoloader": true,

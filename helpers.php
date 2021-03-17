@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use HandmadeWeb\Illuminate\Facades\Cache;
 use HandmadeWeb\Illuminate\Facades\View;
 
@@ -59,5 +60,31 @@ if (! function_exists('cache')) {
         }
 
         return Cache::__getFacadeInstance()->put(key($arguments[0]), reset($arguments[0]), $arguments[1] ?? null);
+    }
+}
+
+if (! function_exists('now')) {
+    /**
+     * Create a new Carbon instance for the current time.
+     *
+     * @param  \DateTimeZone|string|null  $tz
+     * @return \Illuminate\Support\Carbon
+     */
+    function now($tz = null)
+    {
+        return Carbon::now($tz);
+    }
+}
+
+if (! function_exists('today')) {
+    /**
+     * Create a new Carbon instance for the current date.
+     *
+     * @param  \DateTimeZone|string|null  $tz
+     * @return \Illuminate\Support\Carbon
+     */
+    function today($tz = null)
+    {
+        return Carbon::today($tz);
     }
 }

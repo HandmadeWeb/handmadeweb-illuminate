@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '245aa5f3d322b7dc7df2abba82b9bda9b8a4cc99',
+    'reference' => '546c9a51708387e751b94740fcf0a1a54729bc18',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '245aa5f3d322b7dc7df2abba82b9bda9b8a4cc99',
+      'reference' => '546c9a51708387e751b94740fcf0a1a54729bc18',
     ),
     'doctrine/inflector' => 
     array (

@@ -125,6 +125,7 @@ return array(
     'HandmadeWeb\\Illuminate\\AbstractFacadeClass' => $baseDir . '/src/AbstractFacadeClass.php',
     'HandmadeWeb\\Illuminate\\AbstractLoaderClass' => $baseDir . '/src/AbstractLoaderClass.php',
     'HandmadeWeb\\Illuminate\\Facades\\BladeCompiler' => $baseDir . '/src/Facades/BladeCompiler.php',
+    'HandmadeWeb\\Illuminate\\Facades\\Cache' => $baseDir . '/src/Facades/Cache.php',
     'HandmadeWeb\\Illuminate\\Facades\\CompilerEngine' => $baseDir . '/src/Facades/CompilerEngine.php',
     'HandmadeWeb\\Illuminate\\Facades\\DB' => $baseDir . '/src/Facades/DB.php',
     'HandmadeWeb\\Illuminate\\Facades\\Dispatcher' => $baseDir . '/src/Facades/Dispatcher.php',
