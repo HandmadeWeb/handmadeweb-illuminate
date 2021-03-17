@@ -2,9 +2,13 @@
 
 namespace HandmadeWeb\Illuminate;
 
-class Loader
+abstract class AbstractLoaderClass
 {
     public static function boot()
+    {
+    }
+
+    public static function runMigrations()
     {
     }
 }

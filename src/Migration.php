@@ -10,13 +10,13 @@ class Migration
 {
     public function __construct($name, $callback)
     {
-        if (! Schema::hasTable('migrations')) {
+        if (! Schema::hasTable('illuminate_migrations')) {
             $this->createMigrationsTable();
         }
 
-        if (Schema::hasTable('migrations') && ! DB::table('migrations')->where('migration', $name)->first()) {
+        if (Schema::hasTable('illuminate_migrations') && ! DB::table('illuminate_migrations')->where('migration', $name)->first()) {
             call_user_func($callback);
-            DB::table('migrations')->insert([
+            DB::table('illuminate_migrations')->insert([
                 'migration' => $name,
                 'migrated_at' => Carbon::now(),
             ]);
@@ -25,7 +25,7 @@ class Migration
 
     protected function createMigrationsTable()
     {
-        Schema::create('migrations', function ($table) {
+        Schema::create('illuminate_migrations', function ($table) {
             $table->id();
             $table->string('migration')->index();
             $table->datetime('migrated_at');
