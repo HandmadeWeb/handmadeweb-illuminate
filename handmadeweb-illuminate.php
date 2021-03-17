@@ -8,7 +8,6 @@ Version: 1.0.0
 Author URI: https://
 */
 
-use HandmadeWeb\Illuminate\Facades\Request;
 use HandmadeWeb\Illuminate\PluginLoader;
 
 defined('ABSPATH') || exit;
