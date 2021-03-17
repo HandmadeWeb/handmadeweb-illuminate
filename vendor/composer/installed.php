@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '30da5be421544f5df585d459863049084d62f255',
+    'reference' => '245aa5f3d322b7dc7df2abba82b9bda9b8a4cc99',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '30da5be421544f5df585d459863049084d62f255',
+      'reference' => '245aa5f3d322b7dc7df2abba82b9bda9b8a4cc99',
     ),
     'doctrine/inflector' => 
     array (
@@ -37,6 +37,15 @@
       array (
       ),
       'reference' => '18b3d810cfe52a4fa040994e68da4f356a498e8a',
+    ),
+    'illuminate/cache' => 
+    array (
+      'pretty_version' => 'v8.33.1',
+      'version' => '8.33.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cc64e6a8447ec18813f62152c2743d9dcbf00a94',
     ),
     'illuminate/collections' => 
     array (

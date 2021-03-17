@@ -1,6 +1,7 @@
 {
     "require": {
         "php": "^7.2",
+        "illuminate/cache": "^8.33",
         "illuminate/database": "^8.29",
         "illuminate/view": "^8.29"
     },

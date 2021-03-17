@@ -6,9 +6,10 @@ abstract class AbstractLoaderClass
 {
     public static function boot()
     {
+        static::runMigrations();
     }
 
-    public static function runMigrations()
+    private static function runMigrations()
     {
     }
 }

@@ -29,6 +29,7 @@ return array(
     'Illuminate\\Database\\' => array($vendorDir . '/illuminate/database'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
+    'Illuminate\\Cache\\' => array($vendorDir . '/illuminate/cache'),
     'Illuminate\\Bus\\' => array($vendorDir . '/illuminate/bus'),
     'HandmadeWeb\\Illuminate\\' => array($baseDir . '/src'),
     'Doctrine\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector'),
