@@ -6,7 +6,6 @@ use HandmadeWeb\Illuminate\Facades\Cookie;
 use HandmadeWeb\Illuminate\Facades\Crypt;
 use HandmadeWeb\Illuminate\Facades\Hash;
 use HandmadeWeb\Illuminate\Facades\Request;
-use HandmadeWeb\Illuminate\Facades\Response;
 use HandmadeWeb\Illuminate\Facades\View;
 
 if (! function_exists('bcrypt')) {
