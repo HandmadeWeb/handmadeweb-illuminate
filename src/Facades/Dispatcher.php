@@ -18,6 +18,6 @@ class Dispatcher extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        return new \Illuminate\Events\Dispatcher();
+        return new \Illuminate\Events\Dispatcher;
     }
 }

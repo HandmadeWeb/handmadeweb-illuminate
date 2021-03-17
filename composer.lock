@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7705b3e783cf8623a5e16a11e1b8474",
+    "content-hash": "5d951f208805a5f06296fcdbee79b266",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -548,6 +548,54 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2021-03-16T12:43:20+00:00"
+        },
+        {
+            "name": "illuminate/hashing",
+            "version": "v8.33.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/hashing.git",
+                "reference": "e0541364324c4cc165d4fd54afade571e1bb1626"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/hashing/zipball/e0541364324c4cc165d4fd54afade571e1bb1626",
+                "reference": "e0541364324c4cc165d4fd54afade571e1bb1626",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0",
+                "illuminate/support": "^8.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Hashing\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Hashing package.",
+            "homepage": "https://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "time": "2021-01-30T19:50:02+00:00"
         },
         {
             "name": "illuminate/macroable",

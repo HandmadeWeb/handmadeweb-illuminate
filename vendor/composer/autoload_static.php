@@ -51,6 +51,7 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
             'Illuminate\\View\\' => 16,
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Pipeline\\' => 20,
+            'Illuminate\\Hashing\\' => 19,
             'Illuminate\\Filesystem\\' => 22,
             'Illuminate\\Events\\' => 18,
             'Illuminate\\Database\\' => 20,
@@ -147,6 +148,10 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Illuminate\\Pipeline\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/pipeline',
+        ),
+        'Illuminate\\Hashing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/hashing',
         ),
         'Illuminate\\Filesystem\\' => 
         array (
@@ -663,6 +668,12 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Illuminate\\Filesystem\\FilesystemManager' => __DIR__ . '/..' . '/illuminate/filesystem/FilesystemManager.php',
         'Illuminate\\Filesystem\\FilesystemServiceProvider' => __DIR__ . '/..' . '/illuminate/filesystem/FilesystemServiceProvider.php',
         'Illuminate\\Filesystem\\LockableFile' => __DIR__ . '/..' . '/illuminate/filesystem/LockableFile.php',
+        'Illuminate\\Hashing\\AbstractHasher' => __DIR__ . '/..' . '/illuminate/hashing/AbstractHasher.php',
+        'Illuminate\\Hashing\\Argon2IdHasher' => __DIR__ . '/..' . '/illuminate/hashing/Argon2IdHasher.php',
+        'Illuminate\\Hashing\\ArgonHasher' => __DIR__ . '/..' . '/illuminate/hashing/ArgonHasher.php',
+        'Illuminate\\Hashing\\BcryptHasher' => __DIR__ . '/..' . '/illuminate/hashing/BcryptHasher.php',
+        'Illuminate\\Hashing\\HashManager' => __DIR__ . '/..' . '/illuminate/hashing/HashManager.php',
+        'Illuminate\\Hashing\\HashServiceProvider' => __DIR__ . '/..' . '/illuminate/hashing/HashServiceProvider.php',
         'Illuminate\\Pipeline\\Hub' => __DIR__ . '/..' . '/illuminate/pipeline/Hub.php',
         'Illuminate\\Pipeline\\Pipeline' => __DIR__ . '/..' . '/illuminate/pipeline/Pipeline.php',
         'Illuminate\\Pipeline\\PipelineServiceProvider' => __DIR__ . '/..' . '/illuminate/pipeline/PipelineServiceProvider.php',
