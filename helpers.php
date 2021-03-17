@@ -2,52 +2,24 @@
 
 use Carbon\Carbon;
 use HandmadeWeb\Illuminate\Facades\Cache;
+use HandmadeWeb\Illuminate\Facades\Cookie;
+use HandmadeWeb\Illuminate\Facades\Crypt;
 use HandmadeWeb\Illuminate\Facades\Hash;
+use HandmadeWeb\Illuminate\Facades\Request;
+use HandmadeWeb\Illuminate\Facades\Response;
 use HandmadeWeb\Illuminate\Facades\View;
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Auth\Access\Gate;
-use Illuminate\Contracts\Auth\Factory as AuthFactory;
-use Illuminate\Contracts\Broadcasting\Factory as BroadcastFactory;
-use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Contracts\Cookie\Factory as CookieFactory;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Contracts\Routing\ResponseFactory;
-use Illuminate\Contracts\Routing\UrlGenerator;
-use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-use Illuminate\Contracts\View\Factory as ViewFactory;
-use Illuminate\Foundation\Bus\PendingClosureDispatch;
-use Illuminate\Foundation\Bus\PendingDispatch;
-use Illuminate\Foundation\Mix;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Queue\CallQueuedClosure;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\HtmlString;
-use Symfony\Component\HttpFoundation\Response;
 
-if (! function_exists('locationExistsOrCreate')) {
-    function locationExistsOrCreate(string $location, int $chmodPermission = 0755): bool
-    {
-        return is_dir($location) ?: mkdir($location, $chmodPermission, true);
-    }
-}
-
-if (! function_exists('view')) {
+if (! function_exists('bcrypt')) {
     /**
-     * Get the evaluated view contents for the given view.
+     * Hash the given value against the bcrypt algorithm.
      *
-     * @param  string|null  $view
-     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
-     * @param  array  $mergeData
-     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     * @param  string  $value
+     * @param  array  $options
+     * @return string
      */
-    function view($view = null, $data = [], $mergeData = [])
+    function bcrypt($value, $options = [])
     {
-        if (func_num_args() === 0) {
-            return View::__getFacadeInstance();
-        }
-
-        return View::make($view, $data, $mergeData);
+        return Hash::__getFacadeInstance()->make($value, $options);
     }
 }
 
@@ -84,46 +56,6 @@ if (! function_exists('cache')) {
     }
 }
 
-if (! function_exists('now')) {
-    /**
-     * Create a new Carbon instance for the current time.
-     *
-     * @param  \DateTimeZone|string|null  $tz
-     * @return \Illuminate\Support\Carbon
-     */
-    function now($tz = null)
-    {
-        return Carbon::now($tz);
-    }
-}
-
-if (! function_exists('today')) {
-    /**
-     * Create a new Carbon instance for the current date.
-     *
-     * @param  \DateTimeZone|string|null  $tz
-     * @return \Illuminate\Support\Carbon
-     */
-    function today($tz = null)
-    {
-        return Carbon::today($tz);
-    }
-}
-
-if (! function_exists('bcrypt')) {
-    /**
-     * Hash the given value against the bcrypt algorithm.
-     *
-     * @param  string  $value
-     * @param  array  $options
-     * @return string
-     */
-    function bcrypt($value, $options = [])
-    {
-        return Hash::driver('bcrypt')->make($value, $options);
-    }
-}
-
 if (! function_exists('cookie')) {
     /**
      * Create a new cookie instance.
@@ -141,13 +73,11 @@ if (! function_exists('cookie')) {
      */
     function cookie($name = null, $value = null, $minutes = 0, $path = null, $domain = null, $secure = null, $httpOnly = true, $raw = false, $sameSite = null)
     {
-        $cookie = app(CookieFactory::class);
-
         if (is_null($name)) {
-            return $cookie;
+            return Cookie::__getFacadeInstance();
         }
 
-        return $cookie->make($name, $value, $minutes, $path, $domain, $secure, $httpOnly, $raw, $sameSite);
+        return Cookie::__getFacadeInstance()->make($name, $value, $minutes, $path, $domain, $secure, $httpOnly, $raw, $sameSite);
     }
 }
 
@@ -161,7 +91,7 @@ if (! function_exists('decrypt')) {
      */
     function decrypt($value, $unserialize = true)
     {
-        return app('encrypter')->decrypt($value, $unserialize);
+        return Crypt::__getFacadeInstance()->decrypt($value, $unserialize);
     }
 }
 
@@ -175,7 +105,27 @@ if (! function_exists('encrypt')) {
      */
     function encrypt($value, $serialize = true)
     {
-        return app('encrypter')->encrypt($value, $serialize);
+        return Crypt::__getFacadeInstance()->encrypt($value, $serialize);
+    }
+}
+
+if (! function_exists('locationExistsOrCreate')) {
+    function locationExistsOrCreate(string $location, int $chmodPermission = 0755): bool
+    {
+        return is_dir($location) ?: mkdir($location, $chmodPermission, true);
+    }
+}
+
+if (! function_exists('now')) {
+    /**
+     * Create a new Carbon instance for the current time.
+     *
+     * @param  \DateTimeZone|string|null  $tz
+     * @return \Illuminate\Support\Carbon
+     */
+    function now($tz = null)
+    {
+        return Carbon::now($tz);
     }
 }
 
@@ -190,60 +140,47 @@ if (! function_exists('request')) {
     function request($key = null, $default = null)
     {
         if (is_null($key)) {
-            return app('request');
+            return Request::__getFacadeInstance();
         }
 
         if (is_array($key)) {
-            return app('request')->only($key);
+            return Request::__getFacadeInstance()->only($key);
         }
 
-        $value = app('request')->__get($key);
+        $value = Request::__getFacadeInstance()->__get($key);
 
         return is_null($value) ? value($default) : $value;
     }
 }
 
-if (! function_exists('response')) {
+if (! function_exists('today')) {
     /**
-     * Return a new response from the application.
+     * Create a new Carbon instance for the current date.
      *
-     * @param  \Illuminate\Contracts\View\View|string|array|null  $content
-     * @param  int  $status
-     * @param  array  $headers
-     * @return \Illuminate\Http\Response|\Illuminate\Contracts\Routing\ResponseFactory
+     * @param  \DateTimeZone|string|null  $tz
+     * @return \Illuminate\Support\Carbon
      */
-    function response($content = '', $status = 200, array $headers = [])
+    function today($tz = null)
     {
-        $factory = app(ResponseFactory::class);
-
-        if (func_num_args() === 0) {
-            return $factory;
-        }
-
-        return $factory->make($content, $status, $headers);
+        return Carbon::today($tz);
     }
 }
 
-if (! function_exists('session')) {
+if (! function_exists('view')) {
     /**
-     * Get / set the specified session value.
+     * Get the evaluated view contents for the given view.
      *
-     * If an array is passed as the key, we will assume you want to set an array of values.
-     *
-     * @param  array|string|null  $key
-     * @param  mixed  $default
-     * @return mixed|\Illuminate\Session\Store|\Illuminate\Session\SessionManager
+     * @param  string|null  $view
+     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
+     * @param  array  $mergeData
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    function session($key = null, $default = null)
+    function view($view = null, $data = [], $mergeData = [])
     {
-        if (is_null($key)) {
-            return app('session');
+        if (func_num_args() === 0) {
+            return View::__getFacadeInstance();
         }
 
-        if (is_array($key)) {
-            return app('session')->put($key);
-        }
-
-        return app('session')->get($key, $default);
+        return View::make($view, $data, $mergeData);
     }
 }
