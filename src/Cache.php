@@ -44,6 +44,28 @@ class Cache implements Store
     }
 
     /**
+     * Determine if an item exists in the cache.
+     *
+     * @param  string  $key
+     * @return bool
+     */
+    public function has($key)
+    {
+        return ! is_null($this->get($key));
+    }
+
+    /**
+     * Determine if an item doesn't exist in the cache.
+     *
+     * @param  string  $key
+     * @return bool
+     */
+    public function missing($key)
+    {
+        return ! $this->has($key);
+    }
+
+    /**
      * Retrieve an item from the cache by key.
      *
      * @param  string|array  $key
@@ -104,26 +126,17 @@ class Cache implements Store
     }
 
     /**
-     * Store an item in the cache if the key doesn't exist.
+     * Retrieve an item from the cache and delete it.
      *
      * @param  string  $key
-     * @param  mixed  $value
-     * @param  int  $seconds
-     * @return bool
+     * @param  mixed  $default
+     * @return mixed
      */
-    public function add($key, $value, $seconds)
+    public function pull($key, $default = null)
     {
-        global $wpdb;
-
-        $key = $this->prefix.$key;
-        $value = $this->serialize($value);
-        $expiration = $this->getTime() + $seconds;
-
-        try {
-            return $wpdb->insert($this->table, ['key' => $key, 'value' => $value, 'expiration' => $expiration]);
-        } catch (QueryException $e) {
-            return $wpdb->query($wpdb->prepare("UPDATE `{$this->table}` SET `value` = %s, `expiration` = %s WHERE `key` = %s AND expiration <= %s", $value, $expiration, $key, $this->getTime())) === true;
-        }
+        return tap($this->get($key, $default), function () use ($key) {
+            $this->forget($key);
+        });
     }
 
     /**
@@ -218,6 +231,53 @@ class Cache implements Store
     public function forever($key, $value)
     {
         return $this->put($key, $value, 315360000);
+    }
+
+    /**
+     * Get an item from the cache, or execute the given Closure and store the result.
+     *
+     * @param  string  $key
+     * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
+     * @param  \Closure  $callback
+     * @return mixed
+     */
+    public function remember($key, $ttl, Closure $callback)
+    {
+        $value = $this->get($key);
+
+        // If the item exists in the cache we will just return this immediately and if
+        // not we will execute the given Closure and cache the result of that for a
+        // given number of seconds so it's available for all subsequent requests.
+        if (! is_null($value)) {
+            return $value;
+        }
+
+        $this->put($key, $value = $callback(), $ttl);
+
+        return $value;
+    }
+
+    /**
+     * Get an item from the cache, or execute the given Closure and store the result forever.
+     *
+     * @param  string  $key
+     * @param  \Closure  $callback
+     * @return mixed
+     */
+    public function rememberForever($key, Closure $callback)
+    {
+        $value = $this->get($key);
+
+        // If the item exists in the cache we will just return this immediately
+        // and if not we will execute the given Closure and cache the result
+        // of that forever so it is available for all subsequent requests.
+        if (! is_null($value)) {
+            return $value;
+        }
+
+        $this->forever($key, $value = $callback());
+
+        return $value;
     }
 
     /**
