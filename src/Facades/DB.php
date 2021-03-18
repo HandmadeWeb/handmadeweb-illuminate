@@ -19,7 +19,7 @@ class DB extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        require_wp_db();
+        //require_wp_db();
         global $wpdb;
 
         $capsule = new Capsule();

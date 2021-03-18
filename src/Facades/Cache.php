@@ -3,7 +3,7 @@
 namespace HandmadeWeb\Illuminate\Facades;
 
 use HandmadeWeb\Illuminate\AbstractFacadeClass;
-use Illuminate\Cache\DatabaseStore;
+use HandmadeWeb\Illuminate\Cache as IlluminateCache;
 
 class Cache extends AbstractFacadeClass
 {
@@ -21,9 +21,7 @@ class Cache extends AbstractFacadeClass
     {
         $prefix = '';
         $cacheTable = 'illuminate_cache';
-        $lockTable = 'illuminate_cache_locks';
-        $lockLottery = [2, 100];
 
-        return new DatabaseStore(DB::__getFacadeInstance()->connection(), $cacheTable, $prefix, $lockTable, $lockLottery);
+        return new IlluminateCache($cacheTable, $prefix);
     }
 }

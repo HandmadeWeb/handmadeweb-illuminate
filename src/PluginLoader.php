@@ -18,13 +18,5 @@ class PluginLoader extends AbstractLoaderClass
                 $table->integer('expiration');
             });
         });
-
-        new IlluminateMigration('HandmadeWeb-Illuminate_create_cache_locks_table', function () {
-            Schema::create('illuminate_cache_locks', function (Blueprint $table) {
-                $table->string('key')->primary();
-                $table->string('owner');
-                $table->integer('expiration');
-            });
-        });
     }
 }
