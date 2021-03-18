@@ -2,41 +2,22 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\AbstractFacadeClass;
-use Illuminate\Database\Capsule\Manager as Capsule;
+use HandmadeWeb\Illuminate\Facades\Capsule;
+use HandmadeWeb\Illuminate\QueryBuilder;
 
-class DB extends AbstractFacadeClass
+class DB
 {
     /**
-     * The facaded instance.
-     */
-    protected static $instance;
-
-    /**
-     * Set the instance behind the facade.
+     * Set the table which the query is targeting.
      *
-     * @return string
+     * @param  \Closure|\Illuminate\Database\Query\Builder|string  $table
+     * @param  string|null  $as
+     * @return $this
      */
-    protected static function __setFacadeInstance()
+    public static function table($table, $as = null)
     {
-        //require_wp_db();
-        global $wpdb;
+        $queryBuilder = new QueryBuilder(Capsule::getConnection());
 
-        $capsule = new Capsule();
-
-        $capsule->addConnection([
-            'driver'    => 'mysql',
-            'host'      => $wpdb->dbhost,
-            'database'  => $wpdb->dbname,
-            'username'  => $wpdb->dbuser,
-            'password'  => $wpdb->dbpassword,
-            'charset'   => $wpdb->charset,
-            'collation' => $wpdb->collate,
-            'prefix'    => $wpdb->prefix,
-        ]);
-
-        $capsule->setAsGlobal();
-
-        return $capsule;
+        return $queryBuilder->from($table, $as);
     }
 }

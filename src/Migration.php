@@ -30,5 +30,10 @@ class Migration
             $table->string('migration')->index();
             $table->datetime('migrated_at');
         });
+
+        DB::table('illuminate_migrations')->insert([
+            'migration' => 'HandmadeWeb-Illuminate_create_migrations_table',
+            'migrated_at' => Carbon::now(),
+        ]);
     }
 }

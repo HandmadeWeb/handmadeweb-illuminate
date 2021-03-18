@@ -18,6 +18,6 @@ class Schema extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        return DB::__getFacadeInstance()->schema();
+        return Capsule::__getFacadeInstance()->schema();
     }
 }

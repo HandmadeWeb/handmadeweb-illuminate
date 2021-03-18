@@ -6,7 +6,6 @@ use Closure;
 use Exception;
 use Illuminate\Cache\RetrievesMultipleKeys;
 use Illuminate\Contracts\Cache\Store;
-use Illuminate\Database\QueryException;
 use Illuminate\Support\InteractsWithTime;
 
 class Cache implements Store
@@ -39,6 +38,7 @@ class Cache implements Store
     public function __construct($table, $prefix = '')
     {
         global $wpdb;
+
         $this->table = $wpdb->prefix.$table;
         $this->prefix = $prefix;
     }
