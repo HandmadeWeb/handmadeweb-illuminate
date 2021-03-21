@@ -6,7 +6,7 @@ abstract class AbstractLoaderClass
 {
     public static function boot()
     {
-        add_action('init', [static::class, 'init']);
+        static::init();
         static::runMigrations();
     }
 

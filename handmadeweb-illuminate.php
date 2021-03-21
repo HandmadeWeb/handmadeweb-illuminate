@@ -12,6 +12,9 @@ use HandmadeWeb\Illuminate\PluginLoader;
 
 defined('ABSPATH') || exit;
 
-require_once __DIR__.'/vendor/autoload.php';
+define('ILLUMINATE_ROOT', __DIR__);
 
-add_action('plugins_loaded', [PluginLoader::class, 'boot'], 1);
+require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/helpers.php';
+
+add_action('plugins_loaded', [PluginLoader::class, 'boot'], -1);
