@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'd38c5dff3a1a0ec9e2ada368e5fea9440f9d6dcb',
+    'reference' => '37b53a72d306876f87223914042c70af75e74db7',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'd38c5dff3a1a0ec9e2ada368e5fea9440f9d6dcb',
+      'reference' => '37b53a72d306876f87223914042c70af75e74db7',
     ),
     'doctrine/inflector' => 
     array (
@@ -324,6 +324,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '80953678b19901e5165c56752d087fc11526017c',
+    ),
+    'woocommerce/action-scheduler' => 
+    array (
+      'pretty_version' => '3.1.6',
+      'version' => '3.1.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '275d0ba54b1c263dfc62688de2fa9a25a373edf8',
     ),
   ),
 );
