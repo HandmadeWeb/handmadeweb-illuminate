@@ -35,15 +35,13 @@ class ViewFinderInterface extends AbstractFacadeClass
          * If current theme is a child theme, then add the blade-templates folder.
          */
         if (is_child_theme()) {
-            $childThemeViewsPath = trailingslashit(get_stylesheet_directory()).'blade-templates/';
-            $viewPaths['child-theme-blade'] = $childThemeViewsPath;
+            $viewPaths['child-theme-blade'] = trailingslashit(get_stylesheet_directory()).'blade-templates/';
         }
 
         /*
-         * Add current theme (or Parent Theme) blade-templates folder
+         * Add current theme (or Parent Theme) buildy-views folder
          */
-        $themeViewsPath = trailingslashit(get_template_directory()).'blade-templates/';
-        $viewPaths['parent-theme-blade'] = $themeViewsPath;
+        $viewPaths['parent-theme-blade'] = trailingslashit(get_template_directory()).'blade-templates/';
 
         return $viewPaths;
     }
