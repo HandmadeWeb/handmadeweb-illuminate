@@ -20,11 +20,11 @@ class ViewFinderInterface extends AbstractFacadeClass
     {
         if (is_child_theme()) {
             $childThemeViewsPath = trailingslashit(get_stylesheet_directory()).'blade-templates/';
-            $viewPaths['child-theme-blade'] = $childThemeViewsPath;
+            locationExistsOrCreate($childThemeViewsPath) ? $viewPaths['child-theme-blade'] = $childThemeViewsPath : null;
         }
 
         $themeViewsPath = trailingslashit(get_template_directory()).'blade-templates/';
-        $viewPaths['parent-theme-blade'] = $themeViewsPath;
+        locationExistsOrCreate($themeViewsPath) ? $viewPaths['parent-theme-blade'] = $themeViewsPath : null;
 
         $viewPaths = apply_filters('handmadeweb-illuminate_blade_view_paths', $viewPaths);
 
