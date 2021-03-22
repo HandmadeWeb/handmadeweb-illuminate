@@ -20,13 +20,17 @@ class ViewFinderInterface extends AbstractFacadeClass
     {
         if (is_child_theme()) {
             $childThemeViewsPath = trailingslashit(get_stylesheet_directory()).'blade-templates/';
-            locationExistsOrCreate($childThemeViewsPath) ? $viewPaths['child-theme-blade'] = $childThemeViewsPath : null;
+            $viewPaths[] = $childThemeViewsPath;
         }
 
         $themeViewsPath = trailingslashit(get_template_directory()).'blade-templates/';
-        locationExistsOrCreate($themeViewsPath) ? $viewPaths['parent-theme-blade'] = $themeViewsPath : null;
+        $viewPaths[] = $themeViewsPath;
 
         $viewPaths = apply_filters('handmadeweb-illuminate_blade_view_paths', $viewPaths);
+
+        foreach ($viewPaths as $viewPath) {
+            locationExistsOrCreate($viewPath);
+        }
 
         return new \Illuminate\View\FileViewFinder(Filesystem::__getFacadeInstance(), $viewPaths);
     }
