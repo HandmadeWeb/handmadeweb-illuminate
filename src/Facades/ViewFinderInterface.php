@@ -18,20 +18,33 @@ class ViewFinderInterface extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        if (is_child_theme()) {
-            $childThemeViewsPath = trailingslashit(get_stylesheet_directory()).'blade-templates/';
-            $viewPaths[] = $childThemeViewsPath;
-        }
+        add_filter('handmadeweb-illuminate_blade_view_paths', [static::class, 'bladeViewPaths'], 1);
 
-        $themeViewsPath = trailingslashit(get_template_directory()).'blade-templates/';
-        $viewPaths[] = $themeViewsPath;
-
-        $viewPaths = apply_filters('handmadeweb-illuminate_blade_view_paths', $viewPaths);
+        $viewPaths = apply_filters('handmadeweb-illuminate_blade_view_paths', []);
 
         foreach ($viewPaths as $viewPath) {
             locationExistsOrCreate($viewPath);
         }
 
         return new \Illuminate\View\FileViewFinder(Filesystem::__getFacadeInstance(), $viewPaths);
+    }
+
+    public static function bladeViewPaths($viewPaths = [])
+    {
+        /*
+         * If current theme is a child theme, then add the blade-templates folder.
+         */
+        if (is_child_theme()) {
+            $childThemeViewsPath = trailingslashit(get_stylesheet_directory()).'blade-templates/';
+            $viewPaths['child-theme-blade'] = $childThemeViewsPath;
+        }
+
+        /*
+         * Add current theme (or Parent Theme) blade-templates folder
+         */
+        $themeViewsPath = trailingslashit(get_template_directory()).'blade-templates/';
+        $viewPaths['parent-theme-blade'] = $themeViewsPath;
+
+        return $viewPaths;
     }
 }
