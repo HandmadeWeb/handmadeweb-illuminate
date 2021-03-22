@@ -26,6 +26,8 @@ class ViewFinderInterface extends AbstractFacadeClass
         $themeViewsPath = trailingslashit(get_template_directory()).'blade-templates/';
         $viewPaths['parent-theme-blade'] = $themeViewsPath;
 
+        $viewPaths = apply_filters('handmadeweb-illuminate_blade_view_paths', $viewPaths);
+
         return new \Illuminate\View\FileViewFinder(Filesystem::__getFacadeInstance(), $viewPaths);
     }
 }
