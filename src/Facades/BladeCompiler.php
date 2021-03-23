@@ -18,7 +18,8 @@ class BladeCompiler extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        $compiledViewPath = __DIR__.'/../../compiled-blade-templates';
+        $compiledViewPath = trailingslashit(WP_CONTENT_DIR).'cache/compiled-blade-templates';
+        locationExistsOrCreate($compiledViewPath);
 
         return new \Illuminate\View\Compilers\BladeCompiler(Filesystem::__getFacadeInstance(), $compiledViewPath);
     }
