@@ -36,6 +36,7 @@ if (! function_exists('cache')) {
         return Cache::__getFacadeInstance()->put(key($arguments[0]), reset($arguments[0]), $arguments[1] ?? null);
     }
 }
+
 if (! function_exists('get_site_timezone')) {
     function get_site_timezone()
     {
@@ -71,7 +72,7 @@ if (! function_exists('now')) {
      */
     function now($tz = null)
     {
-        return Carbon::now($tz);
+        return Carbon::now($tz ?? get_site_timezone());
     }
 }
 
@@ -84,7 +85,7 @@ if (! function_exists('today')) {
      */
     function today($tz = null)
     {
-        return Carbon::today($tz);
+        return Carbon::today($tz ?? get_site_timezone());
     }
 }
 
