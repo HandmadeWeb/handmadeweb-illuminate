@@ -72,7 +72,7 @@ if (! function_exists('now')) {
      */
     function now($tz = null)
     {
-        return Carbon::now($tz ?? get_site_timezone());
+        return Carbon::now($tz);
     }
 }
 
@@ -85,7 +85,7 @@ if (! function_exists('today')) {
      */
     function today($tz = null)
     {
-        return Carbon::today($tz ?? get_site_timezone());
+        return Carbon::today($tz);
     }
 }
 
