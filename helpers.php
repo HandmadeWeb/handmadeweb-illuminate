@@ -36,6 +36,24 @@ if (! function_exists('cache')) {
         return Cache::__getFacadeInstance()->put(key($arguments[0]), reset($arguments[0]), $arguments[1] ?? null);
     }
 }
+if (! function_exists('get_site_timezone')) {
+    function get_site_timezone()
+    {
+        global $the_site_timezone;
+
+        if (empty($site_timezone)) {
+            $timezone = get_option('timezone_string');
+            if (empty($timezone)) {
+                $offset = get_option('gmt_offset');
+                $timezone = 'UTC'.($offset >= 0 ? '+'.$offset : $offset);
+            }
+
+            $the_site_timezone = $timezone;
+        }
+
+        return $the_site_timezone;
+    }
+}
 
 if (! function_exists('locationExistsOrCreate')) {
     function locationExistsOrCreate(string $location, int $chmodPermission = 0755): bool
