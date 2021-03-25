@@ -12,7 +12,8 @@ use HandmadeWeb\Illuminate\PluginLoader;
 
 defined('ABSPATH') || exit;
 
-define('ILLUMINATE_ROOT', __DIR__);
+define('ILLUMINATE_ROOT', trailingslashit(__DIR__));
+define('ILLUMINATE_URL', plugin_dir_url(__FILE__));
 
 /**
  * Composer.
