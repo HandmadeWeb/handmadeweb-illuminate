@@ -381,6 +381,7 @@ return array(
     'Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany' => $vendorDir . '/illuminate/database/Eloquent/Relations/BelongsToMany.php',
     'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\AsPivot' => $vendorDir . '/illuminate/database/Eloquent/Relations/Concerns/AsPivot.php',
     'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\ComparesRelatedModels' => $vendorDir . '/illuminate/database/Eloquent/Relations/Concerns/ComparesRelatedModels.php',
+    'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\InteractsWithDictionary' => $vendorDir . '/illuminate/database/Eloquent/Relations/Concerns/InteractsWithDictionary.php',
     'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\InteractsWithPivotTable' => $vendorDir . '/illuminate/database/Eloquent/Relations/Concerns/InteractsWithPivotTable.php',
     'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\SupportsDefaultModels' => $vendorDir . '/illuminate/database/Eloquent/Relations/Concerns/SupportsDefaultModels.php',
     'Illuminate\\Database\\Eloquent\\Relations\\HasMany' => $vendorDir . '/illuminate/database/Eloquent/Relations/HasMany.php',
