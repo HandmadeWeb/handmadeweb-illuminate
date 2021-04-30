@@ -8,17 +8,24 @@ use HandmadeWeb\Illuminate\Facades\Schema;
 
 class Migration
 {
+    protected $migrationTableExists;
+    protected $migrationAlreadyRan;
+
     public function __construct($name, $callback)
     {
-        if (! Schema::hasTable('illuminate_migrations')) {
+        $this->migrationTableExists = (bool) get_option('illuminate_migration_table_exists');
+
+        if (! $this->migrationTableExists) {
             $this->createMigrationsTable();
         }
 
-        if (Schema::hasTable('illuminate_migrations') && ! DB::table('illuminate_migrations')->where('migration', $name)->first()) {
+        $this->migrationAlreadyRan = MigrationCache::exists($name);
+
+        if ($this->migrationTableExists && ! $this->migrationAlreadyRan) {
             call_user_func($callback);
             DB::table('illuminate_migrations')->insert([
                 'migration' => $name,
-                'migrated_at' => Carbon::now(),
+                'migrated_at' => Carbon::now()->format('Y-m-d h:i:j'),
             ]);
         }
     }
@@ -33,7 +40,9 @@ class Migration
 
         DB::table('illuminate_migrations')->insert([
             'migration' => 'HandmadeWeb-Illuminate_create_migrations_table',
-            'migrated_at' => Carbon::now(),
+            'migrated_at' => Carbon::now()->format('Y-m-d h:i:j'),
         ]);
+
+        update_option('illuminate_migration_table_exists', true, true);
     }
 }
