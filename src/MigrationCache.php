@@ -16,9 +16,9 @@ class MigrationCache
         }
 
         if (static::$migrationTableExists && empty(static::$migrations)) {
-            $migrations = DB::table('illuminate_migrations')->get();
+            $migrations = DB::table('illuminate_migrations')->get(['migration']);
             foreach ($migrations as $migration) {
-                static::$migrations[$migration->migration] = $migration;
+                static::$migrations[$migration->migration] = true;
             }
         }
     }
@@ -32,10 +32,10 @@ class MigrationCache
                 return true;
             }
 
-            $migration = DB::table('illuminate_migrations')->where('migration', $name)->first();
+            $migration = DB::table('illuminate_migrations')->where('migration', $name)->first(['migration']);
 
             if (isset($migration->migration)) {
-                static::$migrations[$name] = $migration;
+                static::$migrations[$migration->migration] = true;
 
                 return true;
             }
