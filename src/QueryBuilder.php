@@ -17,6 +17,10 @@ class QueryBuilder extends Builder
     {
         global $wpdb;
 
+        if (empty($this->getBindings())) {
+            return $wpdb->get_results($this->toSql());
+        }
+
         return $wpdb->get_results($wpdb->prepare(str_replace('?', '%s', $this->toSql()), $this->getBindings()));
     }
 
