@@ -1,6 +1,6 @@
 <?php
 
-namespace HandmadeWeb\Illuminate;
+namespace HandmadeWeb\Illuminate\Static;
 
 use HandmadeWeb\Illuminate\Facades\DB;
 

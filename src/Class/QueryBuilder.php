@@ -1,6 +1,6 @@
 <?php
 
-namespace HandmadeWeb\Illuminate;
+namespace HandmadeWeb\Illuminate\Class;
 
 use Closure;
 use Illuminate\Database\Query\Builder;

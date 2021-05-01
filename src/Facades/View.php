@@ -2,10 +2,10 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\AbstractFacadeClass;
 use HandmadeWeb\Illuminate\Facades\Dispatcher;
 use HandmadeWeb\Illuminate\Facades\EngineResolver;
 use HandmadeWeb\Illuminate\Facades\ViewFinderInterface;
+use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
 
 class View extends AbstractFacadeClass
 {

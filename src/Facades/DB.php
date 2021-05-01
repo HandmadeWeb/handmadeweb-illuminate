@@ -2,8 +2,8 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
+use HandmadeWeb\Illuminate\Class\QueryBuilder;
 use HandmadeWeb\Illuminate\Facades\Capsule;
-use HandmadeWeb\Illuminate\QueryBuilder;
 
 class DB
 {

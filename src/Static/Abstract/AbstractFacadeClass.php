@@ -1,6 +1,6 @@
 <?php
 
-namespace HandmadeWeb\Illuminate;
+namespace HandmadeWeb\Illuminate\Static\Abstract;
 
 abstract class AbstractFacadeClass
 {
@@ -41,8 +41,6 @@ abstract class AbstractFacadeClass
      */
     public static function __callStatic($method, $args)
     {
-        $instance = static::__getFacadeInstance();
-
-        return $instance->$method(...$args);
+        return static::__getFacadeInstance()->$method(...$args);
     }
 }

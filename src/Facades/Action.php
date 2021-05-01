@@ -2,15 +2,11 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
+use HandmadeWeb\Illuminate\Class\Action as IlluminateAction;
 use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
 
-class Filesystem extends AbstractFacadeClass
+class Action extends AbstractFacadeClass
 {
-    /**
-     * The facaded instance.
-     */
-    protected static $instance;
-
     /**
      * Set the instance behind the facade.
      *
@@ -18,6 +14,6 @@ class Filesystem extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        return new \Illuminate\Filesystem\Filesystem;
+        return new IlluminateAction;
     }
 }

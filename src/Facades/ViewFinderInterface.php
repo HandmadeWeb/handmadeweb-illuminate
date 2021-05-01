@@ -2,7 +2,7 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\AbstractFacadeClass;
+use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
 
 class ViewFinderInterface extends AbstractFacadeClass
 {

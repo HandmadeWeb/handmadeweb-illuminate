@@ -2,7 +2,7 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\AbstractFacadeClass;
+use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
 use Illuminate\Database\Capsule\Manager as CapsuleManager;
 
 class Capsule extends AbstractFacadeClass
