@@ -21,7 +21,7 @@ class ViewFinderInterface extends AbstractFacadeClass
     {
         Filter::add('illuminate_blade_view_paths', [static::class, 'bladeViewPaths'], 1);
 
-        $viewPaths = Filter::run('illuminate_blade_view_paths', []);
+        $viewPaths = Filter::runOnce('illuminate_blade_view_paths', []);
 
         foreach ($viewPaths as $viewPath) {
             locationExistsOrCreate($viewPath);
