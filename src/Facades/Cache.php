@@ -19,9 +19,6 @@ class Cache extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        $prefix = '';
-        $cacheTable = 'illuminate_cache';
-
-        return new IlluminateCache($cacheTable, $prefix);
+        return new IlluminateCache('illuminate_cache ', '');
     }
 }
