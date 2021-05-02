@@ -3,6 +3,7 @@
 namespace HandmadeWeb\Illuminate\Facades;
 
 use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
+use HandmadeWeb\Illuminate\Static\Filter;
 
 class ViewFinderInterface extends AbstractFacadeClass
 {
@@ -18,9 +19,9 @@ class ViewFinderInterface extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        add_filter('handmadeweb-illuminate_blade_view_paths', [static::class, 'bladeViewPaths'], 1);
+        Filter::add('illuminate_blade_view_paths', [static::class, 'bladeViewPaths'], 1);
 
-        $viewPaths = apply_filters('handmadeweb-illuminate_blade_view_paths', []);
+        $viewPaths = Filter::run('illuminate_blade_view_paths', []);
 
         foreach ($viewPaths as $viewPath) {
             locationExistsOrCreate($viewPath);
