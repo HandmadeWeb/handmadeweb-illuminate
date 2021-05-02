@@ -16,8 +16,6 @@ class DB
      */
     public static function table($table, $as = null)
     {
-        $queryBuilder = new QueryBuilder(Capsule::getConnection());
-
-        return $queryBuilder->from($table, $as);
+        return (new QueryBuilder(Capsule::getConnection()))->from($table, $as);
     }
 }
