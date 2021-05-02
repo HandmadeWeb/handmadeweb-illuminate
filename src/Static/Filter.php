@@ -1,8 +1,8 @@
 <?php
 
-namespace HandmadeWeb\Illuminate\Class;
+namespace HandmadeWeb\Illuminate\Static;
 
-use HandmadeWeb\Illuminate\Class\Abstract\AbstractHookableClass;
+use HandmadeWeb\Illuminate\Static\Abstract\AbstractHookableClass;
 
 class Filter extends AbstractHookableClass
 {
@@ -13,7 +13,7 @@ class Filter extends AbstractHookableClass
      * @param mixed ...$args
      * @return mixed
      */
-    public function run(string $listener, ...$args)
+    public static function run(string $listener, ...$args)
     {
         // set $value at start, as $arg0
         // example: run('test', $arg0, $arg1, $arg2)
@@ -21,7 +21,7 @@ class Filter extends AbstractHookableClass
 
         $argsCount = count($args);
 
-        foreach ($this->listeners[$listener] ?? [] as $priority) {
+        foreach (static::$listeners[$listener] ?? [] as $priority) {
             foreach ($priority as $_listener) {
                 // set $arg0 to $value at the start of each loop.
                 // $value is then updated below and will be saved back to $arg0 on the next loop.
@@ -49,12 +49,12 @@ class Filter extends AbstractHookableClass
      * @param mixed ...$args
      * @return mixed
      */
-    public function runOnce(string $listener, ...$args)
+    public static function runOnce(string $listener, ...$args)
     {
-        $value = call_user_func_array([$this, 'run'], func_get_args());
-        $this->removeAllFor($listener);
+        $value = call_user_func_array([static::class, 'run'], func_get_args());
+        static::removeAllFor($listener);
 
-        // Output $value, which has been filtered by $this->run($listener, $args).
+        // Output $value, which has been filtered by static::run($listener, $args).
         return $value;
     }
 }

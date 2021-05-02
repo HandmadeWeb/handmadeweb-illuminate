@@ -1,6 +1,6 @@
 <?php
 
-namespace HandmadeWeb\Illuminate\Class\Abstract;
+namespace HandmadeWeb\Illuminate\Static\Abstract;
 
 abstract class AbstractHookableClass
 {
@@ -9,7 +9,7 @@ abstract class AbstractHookableClass
      *
      * @var array
      */
-    protected $listeners = [];
+    protected static $listeners = [];
 
     /**
      * Adds a new callback to the Listeners.
@@ -18,17 +18,13 @@ abstract class AbstractHookableClass
      * @param callable $callback
      * @param int $priority
      * @param int $arguments
-     * @return self
      */
-    public function add(string $listener, callable $callback, int $priority = 10, int $arguments = 1): self
+    public static function add(string $listener, callable $callback, int $priority = 10, int $arguments = 1)
     {
-        $this->listeners[$listener][$priority][] = [
+        return static::$listeners[$listener][$priority][] = [
             'callback' => $callback,
             'arguments' => $arguments,
         ];
-
-        // Allow method chaining.
-        return $this;
     }
 
     /**
@@ -37,9 +33,9 @@ abstract class AbstractHookableClass
      * @param string $listener
      * @return bool
      */
-    public function exists(string $listener): bool
+    public static function exists(string $listener): bool
     {
-        return isset($this->listeners[$listener]);
+        return isset(static::$listeners[$listener]);
     }
 
     /**
@@ -49,9 +45,9 @@ abstract class AbstractHookableClass
      * @param callable $callback
      * @return bool
      */
-    public function existsForCallback(string $listener, callable $callback): bool
+    public static function existsForCallback(string $listener, callable $callback): bool
     {
-        foreach ($this->listeners[$listener] ?? [] as $priority) {
+        foreach (static::$listeners[$listener] ?? [] as $priority) {
             foreach ($priority as $_listener) {
                 if ($_listener['callback'] === $callback) {
                     return true;
@@ -70,14 +66,14 @@ abstract class AbstractHookableClass
      * @param int $priority
      * @return array
      */
-    public function list(string $listener = null, int $priority = null): array
+    public static function list(string $listener = null, int $priority = null): array
     {
         /**
          * If $listener is null, then list all listeners.
          */
         if (is_null($listener)) {
             // Return all listeners, sort listeners A - Z
-            return collect($this->listeners)->map(function ($item) {
+            return collect(static::$listeners)->map(function ($item) {
                 return collect($item)->sortKeys();
             })->toArray();
 
@@ -89,11 +85,11 @@ abstract class AbstractHookableClass
              * If $priority has been defined
              * Check to see if it exists on the specified listener.
              */
-            if (! empty($this->listeners[$listener][$priority])) {
+            if (! empty(static::$listeners[$listener][$priority])) {
                 // Listener/Priority was found, so lets output those results.
                 return [
                     $listener => [
-                        $priority => $this->listeners[$listener][$priority],
+                        $priority => static::$listeners[$listener][$priority],
                     ],
                 ];
 
@@ -109,13 +105,13 @@ abstract class AbstractHookableClass
         /**
          * Check to see if this $listener is defined as a listener.
          */
-        if (! empty($this->listeners[$listener])) {
+        if (! empty(static::$listeners[$listener])) {
             /*
              * $priority was defined, but this $hook did not match any listener.
              * Return results for this $listener, sort numeric priority ASC
              */
             return [
-                $listener => collect($this->listeners[$listener])->sortKeys()->toArray(),
+                $listener => collect(static::$listeners[$listener])->sortKeys()->toArray(),
             ];
         }
 
@@ -127,13 +123,13 @@ abstract class AbstractHookableClass
 
     /**
      * List ALL Listeners.
-     * Shortcut to ->list().
+     * Shortcut to ::list().
      *
      * @return array
      */
-    public function listAll(): array
+    public static function listAll(): array
     {
-        return $this->list();
+        return static::list();
     }
 
     /**
@@ -143,34 +139,26 @@ abstract class AbstractHookableClass
      * @param callable $callback
      * @param int $priority
      * @param int $arguments
-     * @return self
      */
-    public function remove(string $listener, callable $callback, int $priority = 10, int $arguments = 1): self
+    public static function remove(string $listener, callable $callback, int $priority = 10, int $arguments = 1)
     {
-        foreach ($this->listeners[$listener][$priority] ?? [] as $key => $value) {
+        foreach (static::$listeners[$listener][$priority] ?? [] as $key => $value) {
             if ($value['callback'] === $callback && $value['arguments'] === $arguments) {
-                unset($this->listeners[$listener][$priority][$key]);
+                unset(static::$listeners[$listener][$priority][$key]);
 
                 break;
             }
         }
-
-        // Allow method chaining.
-        return $this;
     }
 
     /**
      * Remove ALL Callbacks of a specified Listener.
      *
      * @param string $listener
-     * @return self
      */
-    public function removeAllFor(string $listener): self
+    public static function removeAllFor(string $listener)
     {
-        unset($this->listeners[$listener]);
-
-        // Allow method chaining.
-        return $this;
+        unset(static::$listeners[$listener]);
     }
 
     /**
@@ -178,13 +166,12 @@ abstract class AbstractHookableClass
      *
      * @param string $listener
      * @param mixed ...$args
-     * @return self
      */
-    public function run(string $listener, ...$args)
+    public static function run(string $listener, ...$args)
     {
         $argsCount = count($args);
 
-        foreach ($this->listeners[$listener] ?? [] as $priority) {
+        foreach (static::$listeners[$listener] ?? [] as $priority) {
             foreach ($priority as $_listener) {
                 if ($_listener['arguments'] === 0) {
                     call_user_func($_listener['callback']);
@@ -196,9 +183,6 @@ abstract class AbstractHookableClass
                 }
             }
         }
-
-        // Allow method chaining.
-        return $this;
     }
 
     /**
@@ -206,14 +190,10 @@ abstract class AbstractHookableClass
      *
      * @param string $listener
      * @param mixed ...$args
-     * @return self
      */
-    public function runOnce(string $listener, ...$args)
+    public static function runOnce(string $listener, ...$args)
     {
-        call_user_func_array([$this, 'run'], func_get_args());
-        $this->removeAllFor($listener);
-
-        // Allow method chaining.
-        return $this;
+        call_user_func_array([static::class, 'run'], func_get_args());
+        static::removeAllFor($listener);
     }
 }
