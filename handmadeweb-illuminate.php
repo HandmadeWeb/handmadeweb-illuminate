@@ -18,16 +18,16 @@ define('ILLUMINATE_URL', plugin_dir_url(__FILE__));
 /**
  * Composer.
  */
-require_once __DIR__.'/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 /**
  * https://actionscheduler.org/.
  */
-require_once __DIR__.'/vendor/woocommerce/action-scheduler/action-scheduler.php';
+require __DIR__.'/vendor/woocommerce/action-scheduler/action-scheduler.php';
 
 /**
  * HandmadeWeb - Illuminate Helpers.
  */
-require_once __DIR__.'/helpers.php';
+require __DIR__.'/helpers.php';
 
 add_action('plugins_loaded', [PluginLoader::class, 'boot'], -1);
