@@ -19,9 +19,9 @@ class ViewFinderInterface extends AbstractFacadeClass
      */
     protected static function __setFacadeInstance()
     {
-        Filter::add('illuminate_blade_view_paths', [static::class, 'bladeViewPaths'], 1);
+        Filter::add('illuminate_blade_view_paths', [static::class, 'bladeViewPaths'], 10);
 
-        $viewPaths = Filter::runOnce('illuminate_blade_view_paths', []);
+        $viewPaths = Filter::run('illuminate_blade_view_paths', []);
 
         foreach ($viewPaths as $viewPath) {
             locationExistsOrCreate($viewPath);
@@ -32,18 +32,20 @@ class ViewFinderInterface extends AbstractFacadeClass
 
     public static function bladeViewPaths($viewPaths = [])
     {
+        $additionalViewPaths = [];
+
         /*
          * If current theme is a child theme, then add the blade-templates folder.
          */
         if (is_child_theme()) {
-            $viewPaths['child-theme-blade'] = trailingslashit(get_stylesheet_directory()).'blade-templates/';
+            $additionalViewPaths['child-theme-blade'] = trailingslashit(get_stylesheet_directory()).'blade-templates/';
         }
 
         /*
          * Add current theme (or Parent Theme) buildy-views folder
          */
-        $viewPaths['parent-theme-blade'] = trailingslashit(get_template_directory()).'blade-templates/';
+        $additionalViewPaths['parent-theme-blade'] = trailingslashit(get_template_directory()).'blade-templates/';
 
-        return $viewPaths;
+        return array_merge($viewPaths, $additionalViewPaths);
     }
 }

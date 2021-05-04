@@ -21,10 +21,15 @@ abstract class AbstractHookableClass
      */
     public static function add(string $listener, callable $callback, int $priority = 10, int $arguments = 1)
     {
-        return static::$listeners[$listener][$priority][] = [
+        $additionalListener = static::$listeners[$listener][$priority][] = [
             'callback' => $callback,
             'arguments' => $arguments,
         ];
+
+        // Fix ordering/priority
+        ksort(static::$listeners[$listener]);
+
+        return $additionalListener;
     }
 
     /**
@@ -146,6 +151,8 @@ abstract class AbstractHookableClass
             if ($value['callback'] === $callback && $value['arguments'] === $arguments) {
                 unset(static::$listeners[$listener][$priority][$key]);
 
+                // Fix ordering/priority
+                ksort(static::$listeners[$listener]);
                 break;
             }
         }
