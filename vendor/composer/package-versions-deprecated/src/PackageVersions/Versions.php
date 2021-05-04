@@ -51,7 +51,7 @@ final class Versions
   'illuminate/pipeline' => 'v8.40.0@23aeff5b26ae4aee3f370835c76bd0f4e93f71d2',
   'illuminate/support' => 'v8.40.0@ce1682ef73ab28a61be01c24ec5b090bdf2c3256',
   'illuminate/view' => 'v8.40.0@696a1d6d2213be192429e97245a3d2bb4d6d1849',
-  'nesbot/carbon' => '2.46.0@2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4',
+  'nesbot/carbon' => '2.47.0@606262fd8888b75317ba9461825a24fc34001e1e',
   'psr/container' => '1.1.1@8622567409010282b7aeebe4bb841fe98b58dcaf',
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
   'symfony/console' => 'v5.2.7@90374b8ed059325b49a29b55b3f8bb4062c87629',
@@ -68,7 +68,7 @@ final class Versions
   'symfony/translation-contracts' => 'v2.4.0@95c812666f3e91db75385749fe219c5e494c7f95',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
   'woocommerce/action-scheduler' => '3.1.6@275d0ba54b1c263dfc62688de2fa9a25a373edf8',
-  '__root__' => 'dev-master@97f490c0092cfb785bc51126a14ebe1a807daad8',
+  '__root__' => 'dev-master@7fe3c0764d3a53cbd605a21c8c921b716d7c7476',
 );
 
     private function __construct()
