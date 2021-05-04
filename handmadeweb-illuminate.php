@@ -31,3 +31,10 @@ require __DIR__.'/vendor/woocommerce/action-scheduler/action-scheduler.php';
 require __DIR__.'/helpers.php';
 
 add_action('plugins_loaded', [PluginLoader::class, 'boot'], -1);
+
+/*
+ * Option to disable translations for massive speed improvement.
+ */
+if (defined('DISABLE_TRANSLATIONS') && DISABLE_TRANSLATIONS) {
+    add_filter('override_load_textdomain', '__return_true');
+}
