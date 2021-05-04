@@ -27,7 +27,9 @@ abstract class AbstractHookableClass
         ];
 
         // Fix ordering/priority
-        ksort(static::$listeners[$listener]);
+        if (count(static::$listeners[$listener]) > 1) {
+            ksort(static::$listeners[$listener], SORT_NUMERIC);
+        }
 
         return $additionalListener;
     }
@@ -152,7 +154,10 @@ abstract class AbstractHookableClass
                 unset(static::$listeners[$listener][$priority][$key]);
 
                 // Fix ordering/priority
-                ksort(static::$listeners[$listener]);
+                if (count(static::$listeners[$listener]) > 1) {
+                    ksort(static::$listeners[$listener], SORT_NUMERIC);
+                }
+
                 break;
             }
         }
