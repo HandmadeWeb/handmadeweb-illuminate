@@ -648,6 +648,7 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'HandmadeWeb\\Illuminate\\Migration' => __DIR__ . '/../..' . '/src/Migration.php',
         'HandmadeWeb\\Illuminate\\MigrationCache' => __DIR__ . '/../..' . '/src/MigrationCache.php',
         'HandmadeWeb\\Illuminate\\PluginLoader' => __DIR__ . '/../..' . '/src/PluginLoader.php',
+        'HandmadeWeb\\Illuminate\\Providers\\BladeDirectivesProvider' => __DIR__ . '/../..' . '/src/Providers/BladeDirectivesProvider.php',
         'HandmadeWeb\\Illuminate\\QueryBuilder' => __DIR__ . '/../..' . '/src/QueryBuilder.php',
         'Illuminate\\Bus\\Batch' => __DIR__ . '/..' . '/illuminate/bus/Batch.php',
         'Illuminate\\Bus\\BatchFactory' => __DIR__ . '/..' . '/illuminate/bus/BatchFactory.php',

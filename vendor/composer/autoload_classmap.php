@@ -439,6 +439,7 @@ return array(
     'HandmadeWeb\\Illuminate\\Migration' => $baseDir . '/src/Migration.php',
     'HandmadeWeb\\Illuminate\\MigrationCache' => $baseDir . '/src/MigrationCache.php',
     'HandmadeWeb\\Illuminate\\PluginLoader' => $baseDir . '/src/PluginLoader.php',
+    'HandmadeWeb\\Illuminate\\Providers\\BladeDirectivesProvider' => $baseDir . '/src/Providers/BladeDirectivesProvider.php',
     'HandmadeWeb\\Illuminate\\QueryBuilder' => $baseDir . '/src/QueryBuilder.php',
     'Illuminate\\Bus\\Batch' => $vendorDir . '/illuminate/bus/Batch.php',
     'Illuminate\\Bus\\BatchFactory' => $vendorDir . '/illuminate/bus/BatchFactory.php',
