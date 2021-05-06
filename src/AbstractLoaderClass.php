@@ -1,6 +1,6 @@
 <?php
 
-namespace HandmadeWeb\Illuminate\Static\Abstract;
+namespace HandmadeWeb\Illuminate;
 
 abstract class AbstractLoaderClass
 {

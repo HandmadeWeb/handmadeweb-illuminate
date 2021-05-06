@@ -2,8 +2,7 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
-use HandmadeWeb\Illuminate\Static\Filter;
+use HandmadeWeb\Illuminate\Filter;
 
 class ViewFinderInterface extends AbstractFacadeClass
 {

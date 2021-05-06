@@ -68,7 +68,7 @@ final class Versions
   'symfony/translation-contracts' => 'v2.4.0@95c812666f3e91db75385749fe219c5e494c7f95',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
   'woocommerce/action-scheduler' => '3.1.6@275d0ba54b1c263dfc62688de2fa9a25a373edf8',
-  '__root__' => 'dev-master@7fe3c0764d3a53cbd605a21c8c921b716d7c7476',
+  '__root__' => 'dev-master@fbabb2b83e0c9d26c2d7cb09cc06ebf21ab5a81b',
 );
 
     private function __construct()

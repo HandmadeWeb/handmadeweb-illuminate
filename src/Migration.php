@@ -1,11 +1,10 @@
 <?php
 
-namespace HandmadeWeb\Illuminate\Class;
+namespace HandmadeWeb\Illuminate;
 
 use Carbon\Carbon;
 use HandmadeWeb\Illuminate\Facades\DB;
 use HandmadeWeb\Illuminate\Facades\Schema;
-use HandmadeWeb\Illuminate\Static\MigrationCache;
 
 class Migration
 {

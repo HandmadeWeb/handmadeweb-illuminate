@@ -2,9 +2,9 @@
 
 namespace HandmadeWeb\Illuminate;
 
-use HandmadeWeb\Illuminate\Class\Migration as IlluminateMigration;
+use HandmadeWeb\Illuminate\AbstractLoaderClass;
 use HandmadeWeb\Illuminate\Facades\Schema;
-use HandmadeWeb\Illuminate\Static\Abstract\AbstractLoaderClass;
+use HandmadeWeb\Illuminate\Migration as IlluminateMigration;
 use Illuminate\Database\Schema\Blueprint;
 
 class PluginLoader extends AbstractLoaderClass

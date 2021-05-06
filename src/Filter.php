@@ -1,8 +1,6 @@
 <?php
 
-namespace HandmadeWeb\Illuminate\Static;
-
-use HandmadeWeb\Illuminate\Static\Abstract\AbstractHookableClass;
+namespace HandmadeWeb\Illuminate;
 
 class Filter extends AbstractHookableClass
 {

@@ -2,9 +2,6 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
-use Illuminate\Database\Capsule\Manager as CapsuleManager;
-
 class Capsule extends AbstractFacadeClass
 {
     /**
@@ -21,7 +18,7 @@ class Capsule extends AbstractFacadeClass
     {
         global $wpdb;
 
-        $capsule = new CapsuleManager;
+        $capsule = new \Illuminate\Database\Capsule\Manager;
 
         $capsule->addConnection([
             'driver'    => 'mysql',

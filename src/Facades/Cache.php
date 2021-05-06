@@ -2,8 +2,7 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\Class\Cache as IlluminateCache;
-use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
+use HandmadeWeb\Illuminate\Cache as IlluminateCache;
 
 class Cache extends AbstractFacadeClass
 {

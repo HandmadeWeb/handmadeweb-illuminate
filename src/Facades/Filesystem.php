@@ -2,8 +2,6 @@
 
 namespace HandmadeWeb\Illuminate\Facades;
 
-use HandmadeWeb\Illuminate\Static\Abstract\AbstractFacadeClass;
-
 class Filesystem extends AbstractFacadeClass
 {
     /**

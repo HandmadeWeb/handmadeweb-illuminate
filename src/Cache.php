@@ -1,6 +1,6 @@
 <?php
 
-namespace HandmadeWeb\Illuminate\Class;
+namespace HandmadeWeb\Illuminate;
 
 use Closure;
 use Exception;
