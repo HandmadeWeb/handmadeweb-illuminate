@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '0ebd1e00c62eefff9fe5c0cf64dc6d9a09c86412',
+    'reference' => 'aba6a134fced1b65fb79594933ccabbb2098a43e',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '0ebd1e00c62eefff9fe5c0cf64dc6d9a09c86412',
+      'reference' => 'aba6a134fced1b65fb79594933ccabbb2098a43e',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -344,6 +344,15 @@
       array (
         0 => '2.3',
       ),
+    ),
+    'symfony/var-dumper' => 
+    array (
+      'pretty_version' => 'v5.2.7',
+      'version' => '5.2.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '27cb9f7cfa3853c736425c7233a8f68814b19636',
     ),
     'voku/portable-ascii' => 
     array (
