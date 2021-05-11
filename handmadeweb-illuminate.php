@@ -33,8 +33,8 @@ require __DIR__.'/helpers.php';
 add_action('plugins_loaded', [PluginLoader::class, 'boot'], -1);
 
 /*
- * Option to disable translations for massive speed improvement.
+ * Disable translations for speed improvement.
  */
-if (defined('DISABLE_TRANSLATIONS') && DISABLE_TRANSLATIONS) {
+if (! defined('ENABLE_TRANSLATIONS') || defined('ENABLE_TRANSLATIONS') && ! ENABLE_TRANSLATIONS) {
     add_filter('override_load_textdomain', '__return_true');
 }
