@@ -1,8 +1,8 @@
 <?php
 
-namespace HandmadeWeb\Illuminate;
+namespace Michaelr0\HookableActionsAndFilters;
 
-abstract class AbstractHookableClass
+abstract class Hookable
 {
     /**
      * Array of defined callback Listeners.

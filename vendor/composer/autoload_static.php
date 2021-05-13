@@ -48,6 +48,10 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
             'Psr\\Container\\' => 14,
             'PackageVersions\\' => 16,
         ),
+        'M' => 
+        array (
+            'Michaelr0\\HookableActionsAndFilters\\' => 36,
+        ),
         'I' => 
         array (
             'Illuminate\\View\\' => 16,
@@ -147,6 +151,10 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'PackageVersions\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
+        ),
+        'Michaelr0\\HookableActionsAndFilters\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/michaelr0/hookable-actions-filters/src',
         ),
         'Illuminate\\View\\' => 
         array (
@@ -634,7 +642,6 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Doctrine\\Inflector\\Rules\\Word' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Word.php',
         'Doctrine\\Inflector\\RulesetInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/RulesetInflector.php',
         'Doctrine\\Inflector\\WordInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/WordInflector.php',
-        'HandmadeWeb\\Illuminate\\AbstractHookableClass' => __DIR__ . '/../..' . '/src/AbstractHookableClass.php',
         'HandmadeWeb\\Illuminate\\AbstractLoaderClass' => __DIR__ . '/../..' . '/src/AbstractLoaderClass.php',
         'HandmadeWeb\\Illuminate\\Action' => __DIR__ . '/../..' . '/src/Action.php',
         'HandmadeWeb\\Illuminate\\Cache' => __DIR__ . '/../..' . '/src/Cache.php',
@@ -651,6 +658,7 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'HandmadeWeb\\Illuminate\\Facades\\View' => __DIR__ . '/../..' . '/src/Facades/View.php',
         'HandmadeWeb\\Illuminate\\Facades\\ViewFinderInterface' => __DIR__ . '/../..' . '/src/Facades/ViewFinderInterface.php',
         'HandmadeWeb\\Illuminate\\Filter' => __DIR__ . '/../..' . '/src/Filter.php',
+        'HandmadeWeb\\Illuminate\\Hookable' => __DIR__ . '/../..' . '/src/Hookable.php',
         'HandmadeWeb\\Illuminate\\Migration' => __DIR__ . '/../..' . '/src/Migration.php',
         'HandmadeWeb\\Illuminate\\MigrationCache' => __DIR__ . '/../..' . '/src/MigrationCache.php',
         'HandmadeWeb\\Illuminate\\PluginLoader' => __DIR__ . '/../..' . '/src/PluginLoader.php',
@@ -1128,6 +1136,10 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/illuminate/view/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/illuminate/view/ViewServiceProvider.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Michaelr0\\HookableActionsAndFilters\\Action' => __DIR__ . '/..' . '/michaelr0/hookable-actions-filters/src/Action.php',
+        'Michaelr0\\HookableActionsAndFilters\\Filter' => __DIR__ . '/..' . '/michaelr0/hookable-actions-filters/src/Filter.php',
+        'Michaelr0\\HookableActionsAndFilters\\Hookable' => __DIR__ . '/..' . '/michaelr0/hookable-actions-filters/src/Hookable.php',
+        'Michaelr0\\HookableActionsAndFilters\\Providers\\HookableActionsAndFiltersServiceProvider' => __DIR__ . '/..' . '/michaelr0/hookable-actions-filters/src/Providers/HookableActionsAndFiltersServiceProvider.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'PackageVersions\\FallbackVersions' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/FallbackVersions.php',
         'PackageVersions\\Installer' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/Installer.php',

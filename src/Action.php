@@ -2,6 +2,8 @@
 
 namespace HandmadeWeb\Illuminate;
 
-class Action extends AbstractHookableClass
+use Michaelr0\HookableActionsAndFilters\Action as HookableAction;
+
+class Action extends HookableAction
 {
 }

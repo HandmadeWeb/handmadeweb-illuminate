@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'aba6a134fced1b65fb79594933ccabbb2098a43e',
+    'reference' => '9a23b2d75a404ea55ea85c9a176367d2cc363f40',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'aba6a134fced1b65fb79594933ccabbb2098a43e',
+      'reference' => '9a23b2d75a404ea55ea85c9a176367d2cc363f40',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -181,6 +181,15 @@
       array (
       ),
       'reference' => '696a1d6d2213be192429e97245a3d2bb4d6d1849',
+    ),
+    'michaelr0/hookable-actions-filters' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f31433a755476915ca877fc29fdf865f34787d73',
     ),
     'nesbot/carbon' => 
     array (

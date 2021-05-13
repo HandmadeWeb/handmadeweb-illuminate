@@ -1231,6 +1231,72 @@
             "install-path": "../illuminate/view"
         },
         {
+            "name": "michaelr0/hookable-actions-filters",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michaelr0/hookable-actions-filters.git",
+                "reference": "f31433a755476915ca877fc29fdf865f34787d73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michaelr0/hookable-actions-filters/zipball/f31433a755476915ca877fc29fdf865f34787d73",
+                "reference": "f31433a755476915ca877fc29fdf865f34787d73",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/collections": "^6.0|^7.0|^8.0",
+                "php": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "time": "2021-05-13T05:17:40+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Michaelr0\\HookableActionsAndFilters\\Providers\\HookableActionsAndFiltersServiceProvider"
+                    ],
+                    "aliases": {
+                        "Action": "Michaelr0\\HookableActionsAndFilters\\Action",
+                        "Filter": "Michaelr0\\HookableActionsAndFilters\\Filter"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Michaelr0\\HookableActionsAndFilters\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Rook",
+                    "email": "michael@rook.net.au",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/michaelr0/hookable-actions-filters",
+            "keywords": [
+                "actions",
+                "filters",
+                "hookable",
+                "michaelr0"
+            ],
+            "support": {
+                "issues": "https://github.com/michaelr0/hookable-actions-filters/issues",
+                "source": "https://github.com/michaelr0/hookable-actions-filters/tree/1.0.0"
+            },
+            "install-path": "../michaelr0/hookable-actions-filters"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "2.47.0",
             "version_normalized": "2.47.0.0",
