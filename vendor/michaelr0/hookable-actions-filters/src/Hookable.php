@@ -5,11 +5,25 @@ namespace Michaelr0\HookableActionsAndFilters;
 abstract class Hookable
 {
     /**
+     * REQUIRED IN EACH CHILD CLASS
      * Array of defined callback Listeners.
      *
      * @var array
      */
     protected static $listeners = [];
+
+    /**
+     * Fix listener ordering/priority.
+     *
+     * @param string $listener
+     * @return void
+     */
+    protected static function ksort(string $listener)
+    {
+        if (isset(static::$listeners[$listener]) && count(static::$listeners[$listener]) > 1) {
+            ksort(static::$listeners[$listener], SORT_NUMERIC);
+        }
+    }
 
     /**
      * Adds a new callback to the Listeners.
@@ -27,9 +41,7 @@ abstract class Hookable
         ];
 
         // Fix ordering/priority
-        if (count(static::$listeners[$listener]) > 1) {
-            ksort(static::$listeners[$listener], SORT_NUMERIC);
-        }
+        static::ksort($listener);
 
         return $additionalListener;
     }
@@ -154,9 +166,7 @@ abstract class Hookable
                 unset(static::$listeners[$listener][$priority][$key]);
 
                 // Fix ordering/priority
-                if (count(static::$listeners[$listener]) > 1) {
-                    ksort(static::$listeners[$listener], SORT_NUMERIC);
-                }
+                static::ksort($listener);
 
                 break;
             }

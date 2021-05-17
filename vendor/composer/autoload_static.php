@@ -162,8 +162,8 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/collections',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
+            0 => __DIR__ . '/..' . '/illuminate/macroable',
+            1 => __DIR__ . '/..' . '/illuminate/collections',
             2 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Pipeline\\' => 
@@ -658,7 +658,6 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'HandmadeWeb\\Illuminate\\Facades\\View' => __DIR__ . '/../..' . '/src/Facades/View.php',
         'HandmadeWeb\\Illuminate\\Facades\\ViewFinderInterface' => __DIR__ . '/../..' . '/src/Facades/ViewFinderInterface.php',
         'HandmadeWeb\\Illuminate\\Filter' => __DIR__ . '/../..' . '/src/Filter.php',
-        'HandmadeWeb\\Illuminate\\Hookable' => __DIR__ . '/../..' . '/src/Hookable.php',
         'HandmadeWeb\\Illuminate\\Migration' => __DIR__ . '/../..' . '/src/Migration.php',
         'HandmadeWeb\\Illuminate\\MigrationCache' => __DIR__ . '/../..' . '/src/MigrationCache.php',
         'HandmadeWeb\\Illuminate\\PluginLoader' => __DIR__ . '/../..' . '/src/PluginLoader.php',
@@ -787,6 +786,7 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Illuminate\\Contracts\\Mail\\Mailer' => __DIR__ . '/..' . '/illuminate/contracts/Mail/Mailer.php',
         'Illuminate\\Contracts\\Notifications\\Dispatcher' => __DIR__ . '/..' . '/illuminate/contracts/Notifications/Dispatcher.php',
         'Illuminate\\Contracts\\Notifications\\Factory' => __DIR__ . '/..' . '/illuminate/contracts/Notifications/Factory.php',
+        'Illuminate\\Contracts\\Pagination\\CursorPaginator' => __DIR__ . '/..' . '/illuminate/contracts/Pagination/CursorPaginator.php',
         'Illuminate\\Contracts\\Pagination\\LengthAwarePaginator' => __DIR__ . '/..' . '/illuminate/contracts/Pagination/LengthAwarePaginator.php',
         'Illuminate\\Contracts\\Pagination\\Paginator' => __DIR__ . '/..' . '/illuminate/contracts/Pagination/Paginator.php',
         'Illuminate\\Contracts\\Pipeline\\Hub' => __DIR__ . '/..' . '/illuminate/contracts/Pipeline/Hub.php',

@@ -5,6 +5,14 @@ namespace Michaelr0\HookableActionsAndFilters;
 class Filter extends Hookable
 {
     /**
+     * REQUIRED IN EACH CHILD CLASS
+     * Array of defined callback Listeners.
+     *
+     * @var array
+     */
+    protected static $listeners = [];
+
+    /**
      * Run the specified listener.
      *
      * @param string $listener
