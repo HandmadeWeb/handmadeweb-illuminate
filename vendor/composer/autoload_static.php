@@ -17,8 +17,8 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
-        'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -761,6 +761,7 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Illuminate\\Contracts\\Database\\Eloquent\\CastsInboundAttributes' => __DIR__ . '/..' . '/illuminate/contracts/Database/Eloquent/CastsInboundAttributes.php',
         'Illuminate\\Contracts\\Database\\Eloquent\\DeviatesCastableAttributes' => __DIR__ . '/..' . '/illuminate/contracts/Database/Eloquent/DeviatesCastableAttributes.php',
         'Illuminate\\Contracts\\Database\\Eloquent\\SerializesCastableAttributes' => __DIR__ . '/..' . '/illuminate/contracts/Database/Eloquent/SerializesCastableAttributes.php',
+        'Illuminate\\Contracts\\Database\\Eloquent\\SupportsPartialRelations' => __DIR__ . '/..' . '/illuminate/contracts/Database/Eloquent/SupportsPartialRelations.php',
         'Illuminate\\Contracts\\Database\\Events\\MigrationEvent' => __DIR__ . '/..' . '/illuminate/contracts/Database/Events/MigrationEvent.php',
         'Illuminate\\Contracts\\Database\\ModelIdentifier' => __DIR__ . '/..' . '/illuminate/contracts/Database/ModelIdentifier.php',
         'Illuminate\\Contracts\\Debug\\ExceptionHandler' => __DIR__ . '/..' . '/illuminate/contracts/Debug/ExceptionHandler.php',
@@ -907,6 +908,7 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo' => __DIR__ . '/..' . '/illuminate/database/Eloquent/Relations/BelongsTo.php',
         'Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany' => __DIR__ . '/..' . '/illuminate/database/Eloquent/Relations/BelongsToMany.php',
         'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\AsPivot' => __DIR__ . '/..' . '/illuminate/database/Eloquent/Relations/Concerns/AsPivot.php',
+        'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\CanBeOneOfMany' => __DIR__ . '/..' . '/illuminate/database/Eloquent/Relations/Concerns/CanBeOneOfMany.php',
         'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\ComparesRelatedModels' => __DIR__ . '/..' . '/illuminate/database/Eloquent/Relations/Concerns/ComparesRelatedModels.php',
         'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\InteractsWithDictionary' => __DIR__ . '/..' . '/illuminate/database/Eloquent/Relations/Concerns/InteractsWithDictionary.php',
         'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\InteractsWithPivotTable' => __DIR__ . '/..' . '/illuminate/database/Eloquent/Relations/Concerns/InteractsWithPivotTable.php',
@@ -1132,6 +1134,7 @@ class ComposerStaticInitc6b8789b0706880d4996ba9f122115f7
         'Illuminate\\View\\InvokableComponentVariable' => __DIR__ . '/..' . '/illuminate/view/InvokableComponentVariable.php',
         'Illuminate\\View\\Middleware\\ShareErrorsFromSession' => __DIR__ . '/..' . '/illuminate/view/Middleware/ShareErrorsFromSession.php',
         'Illuminate\\View\\View' => __DIR__ . '/..' . '/illuminate/view/View.php',
+        'Illuminate\\View\\ViewException' => __DIR__ . '/..' . '/illuminate/view/ViewException.php',
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/illuminate/view/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/illuminate/view/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/illuminate/view/ViewServiceProvider.php',
