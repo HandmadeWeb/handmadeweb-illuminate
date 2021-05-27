@@ -33,26 +33,26 @@ final class Versions
      * @internal
      */
     const VERSIONS          = array (
-  'composer/package-versions-deprecated' => '1.11.99.1@7413f0b55a051e89485c5cb9f765fe24bb02a7b6',
-  'doctrine/cache' => '1.11.2@9c53086695937c50c47936ed86d96150ffbcf60d',
+  'composer/package-versions-deprecated' => '1.11.99.2@c6522afe5540d5fc46675043d3ed5a45a740b27c',
+  'doctrine/cache' => '1.11.3@3bb5588cec00a0268829cc4a518490df6741af9d',
   'doctrine/dbal' => '3.1.0@5ba62e7e40df119424866064faf2cef66cb5232a',
   'doctrine/deprecations' => 'v0.5.3@9504165960a1f83cc1480e2be1dd0a0478561314',
   'doctrine/event-manager' => '1.1.1@41370af6a30faa9dc0368c4a6814d596e81aba7f',
   'doctrine/inflector' => '2.0.3@9cf661f4eb38f7c881cac67c75ea9b00bf97b210',
-  'illuminate/bus' => 'v8.42.1@2156797125702623af47983867c05cc965490c19',
-  'illuminate/cache' => 'v8.42.1@499d15db9b58b5701aa85a4790ae1404d79009aa',
-  'illuminate/collections' => 'v8.42.1@deccb956d38710f3f8baf36dd876c3fa1585ec22',
-  'illuminate/container' => 'v8.42.1@07342efca88cf9fff4f2fa0e3c378ea6ee86e5e2',
-  'illuminate/contracts' => 'v8.42.1@68036b4fb17ad40a599323bda3f2c0845c8100d8',
-  'illuminate/database' => 'v8.42.1@d5bea2ae823dc66f08ea56e09b1bbf7d8b5086c9',
-  'illuminate/events' => 'v8.42.1@bd2941d4d55f5d357b203dc2ed81ac5c138593dc',
-  'illuminate/filesystem' => 'v8.42.1@7c7372874615475f46d484a2190f90e8effcd8b5',
-  'illuminate/macroable' => 'v8.42.1@300aa13c086f25116b5f3cde3ca54ff5c822fb05',
-  'illuminate/pipeline' => 'v8.42.1@23aeff5b26ae4aee3f370835c76bd0f4e93f71d2',
-  'illuminate/support' => 'v8.42.1@ed5adf8494e6c047fcf6de8b56153640379bf08d',
-  'illuminate/view' => 'v8.42.1@e5157304e3c29f4f04ec6dd566252c3cbb51c190',
+  'illuminate/bus' => 'v8.43.0@2156797125702623af47983867c05cc965490c19',
+  'illuminate/cache' => 'v8.43.0@499d15db9b58b5701aa85a4790ae1404d79009aa',
+  'illuminate/collections' => 'v8.43.0@deccb956d38710f3f8baf36dd876c3fa1585ec22',
+  'illuminate/container' => 'v8.43.0@07342efca88cf9fff4f2fa0e3c378ea6ee86e5e2',
+  'illuminate/contracts' => 'v8.43.0@b9a7cf6acf1d05d863b6ef67c00cdb0e4ccea097',
+  'illuminate/database' => 'v8.43.0@1de37c79ffb948f9ad819b56d080dab9cc375da3',
+  'illuminate/events' => 'v8.43.0@bd2941d4d55f5d357b203dc2ed81ac5c138593dc',
+  'illuminate/filesystem' => 'v8.43.0@7c7372874615475f46d484a2190f90e8effcd8b5',
+  'illuminate/macroable' => 'v8.43.0@300aa13c086f25116b5f3cde3ca54ff5c822fb05',
+  'illuminate/pipeline' => 'v8.43.0@23aeff5b26ae4aee3f370835c76bd0f4e93f71d2',
+  'illuminate/support' => 'v8.43.0@8a2db3cb7e76fdbd28c6172492a79ab540a9b8e5',
+  'illuminate/view' => 'v8.43.0@e5157304e3c29f4f04ec6dd566252c3cbb51c190',
   'michaelr0/hookable-actions-filters' => '1.0.1@d13d86eb70f704af4fb69298584235657dd425da',
-  'nesbot/carbon' => '2.48.0@d3c447f21072766cddec3522f9468a5849a76147',
+  'nesbot/carbon' => '2.48.1@8d1f50f1436fb4b05e7127360483dd9c6e73da16',
   'psr/container' => '1.1.1@8622567409010282b7aeebe4bb841fe98b58dcaf',
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
   'symfony/console' => 'v5.2.8@864568fdc0208b3eba3638b6000b69d2386e6768',
@@ -70,7 +70,7 @@ final class Versions
   'symfony/var-dumper' => 'v5.2.8@d693200a73fae179d27f8f1b16b4faf3e8569eba',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
   'woocommerce/action-scheduler' => '3.1.6@275d0ba54b1c263dfc62688de2fa9a25a373edf8',
-  '__root__' => 'dev-master@f06db861cc7592377c9c02c04d104e2670979ba0',
+  '__root__' => 'dev-master@bab329bc16f08c6a4dc0e4c0a7e4c9ac5f0083b8',
 );
 
     private function __construct()
@@ -85,7 +85,7 @@ final class Versions
      */
     public static function rootPackageName() : string
     {
-        if (!class_exists(InstalledVersions::class, false) || !InstalledVersions::getRawData()) {
+        if (!class_exists(InstalledVersions::class, false) || !(method_exists(InstalledVersions::class, 'getAllRawData') ? InstalledVersions::getAllRawData() : InstalledVersions::getRawData())) {
             return self::ROOT_PACKAGE_NAME;
         }
 
@@ -103,7 +103,7 @@ final class Versions
      */
     public static function getVersion(string $packageName): string
     {
-        if (class_exists(InstalledVersions::class, false) && InstalledVersions::getRawData()) {
+        if (class_exists(InstalledVersions::class, false) && (method_exists(InstalledVersions::class, 'getAllRawData') ? InstalledVersions::getAllRawData() : InstalledVersions::getRawData())) {
             return InstalledVersions::getPrettyVersion($packageName)
                 . '@' . InstalledVersions::getReference($packageName);
         }
