@@ -5,7 +5,7 @@
         "illuminate/cache": "^8.0",
         "illuminate/database": "^8.0",
         "illuminate/view": "^8.0",
-        "michaelr0/hookable-actions-filters": "^1.0",
+        "handmadeweb/hookable-actions-filters": "^1.0",
         "symfony/var-dumper": "^5.2",
         "woocommerce/action-scheduler": "^3.1"
     },
