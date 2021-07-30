@@ -1,14 +1,15 @@
 <?php
+
 /**
  * Plugin Name: Handmade Web - Illuminate
- * Plugin URI: https://github.com/HandmadeWeb/HandmadeWeb-Illuminate
+ * Plugin URI: https://github.com/handmadeweb/handmadeweb-illuminate
  * Description: Handmade Web - Illuminate
  * Author: Handmade Web
  * Version: 1.0.0
  * Author URI: https://www.handmadeweb.com.au/
- * GitHub Plugin URI: https://github.com/HandmadeWeb/HandmadeWeb-Illuminate
+ * GitHub Plugin URI: https://github.com/handmadeweb/handmadeweb-illuminate
  * Requires at least: 5.0
- * Requires PHP: 7.3
+ * Requires PHP: 7.3.
  */
 
 use HandmadeWeb\Illuminate\PluginLoader;
