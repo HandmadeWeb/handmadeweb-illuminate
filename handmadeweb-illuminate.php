@@ -8,6 +8,7 @@
  * Version: 1.0.0
  * Author URI: https://www.handmadeweb.com.au/
  * GitHub Plugin URI: https://github.com/handmadeweb/handmadeweb-illuminate
+ * Primary Branch: main
  * Requires at least: 5.0
  * Requires PHP: 7.3.
  */
