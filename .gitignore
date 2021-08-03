@@ -1,1 +1,10 @@
+/node_modules
 .DS_Store
+.env
+.env.testing
+.env.backup
+.phpunit.xml
+.phpunit.result.cache
+.php_cs.cache
+npm-debug.log
+yarn-error.log
