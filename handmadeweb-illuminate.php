@@ -10,7 +10,8 @@
  * GitHub Plugin URI: https://github.com/handmadeweb/handmadeweb-illuminate
  * Primary Branch: main
  * Requires at least: 5.0
- * Requires PHP: 7.3.
+ * Requires PHP: 7.3
+ * Go: Enjoy.
  */
 
 use HandmadeWeb\Illuminate\PluginLoader;
