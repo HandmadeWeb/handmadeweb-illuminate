@@ -5,7 +5,7 @@
  * Plugin URI: https://github.com/handmadeweb/handmadeweb-illuminate
  * Description: Handmade Web - Illuminate
  * Author: Handmade Web
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author URI: https://www.handmadeweb.com.au/
  * GitHub Plugin URI: https://github.com/handmadeweb/handmadeweb-illuminate
  * Primary Branch: main
@@ -41,6 +41,6 @@ add_action('plugins_loaded', [PluginLoader::class, 'boot'], -1);
 /*
  * Disable translations for speed improvement.
  */
-if (! defined('ENABLE_TRANSLATIONS') || defined('ENABLE_TRANSLATIONS') && ! ENABLE_TRANSLATIONS) {
+if (!defined('ENABLE_TRANSLATIONS') || defined('ENABLE_TRANSLATIONS') && !ENABLE_TRANSLATIONS) {
     add_filter('override_load_textdomain', '__return_true');
 }

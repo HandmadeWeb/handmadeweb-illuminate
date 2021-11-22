@@ -325,8 +325,6 @@ class Connection
             throw $this->convertException($e);
         }
 
-        $this->transactionNestingLevel = 0;
-
         if ($this->autoCommit === false) {
             $this->beginTransaction();
         }
@@ -641,7 +639,8 @@ class Connection
      */
     public function close()
     {
-        $this->_conn = null;
+        $this->_conn                   = null;
+        $this->transactionNestingLevel = 0;
     }
 
     /**
@@ -761,7 +760,7 @@ class Connection
     {
         $typeValues = [];
 
-        foreach ($columnList as $columnIndex => $columnName) {
+        foreach ($columnList as $columnName) {
             $typeValues[] = $types[$columnName] ?? ParameterType::STRING;
         }
 
@@ -1199,7 +1198,7 @@ class Connection
      *
      * @param string|null $name Name of the sequence object from which the ID should be returned.
      *
-     * @return string A string representation of the last inserted ID.
+     * @return string|int|false A string representation of the last inserted ID.
      *
      * @throws Exception
      */
@@ -1675,11 +1674,11 @@ class Connection
      * @param mixed                $value The value to bind.
      * @param int|string|Type|null $type  The type to bind (PDO or DBAL).
      *
-     * @return mixed[] [0] => the (escaped) value, [1] => the binding type.
+     * @return array{mixed, int} [0] => the (escaped) value, [1] => the binding type.
      *
      * @throws Exception
      */
-    private function getBindingInfo($value, $type)
+    private function getBindingInfo($value, $type): array
     {
         if (is_string($type)) {
             $type = Type::getType($type);
@@ -1689,7 +1688,7 @@ class Connection
             $value       = $type->convertToDatabaseValue($value, $this->getDatabasePlatform());
             $bindingType = $type->getBindingType();
         } else {
-            $bindingType = $type;
+            $bindingType = $type ?? ParameterType::STRING;
         }
 
         return [$value, $bindingType];

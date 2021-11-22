@@ -33,31 +33,31 @@ final class Versions
      * @internal
      */
     const VERSIONS          = array (
-  'composer/package-versions-deprecated' => '1.11.99.2@c6522afe5540d5fc46675043d3ed5a45a740b27c',
+  'composer/package-versions-deprecated' => '1.11.99.4@b174585d1fe49ceed21928a945138948cb394600',
   'doctrine/cache' => '2.1.1@331b4d5dbaeab3827976273e9356b3b453c300ce',
-  'doctrine/dbal' => '3.1.1@8e0fde2b90e3f61361013d1e928621beeea07bc0',
+  'doctrine/dbal' => '3.1.4@821b4f01a36ce63ed36c090ea74767b72db367e9',
   'doctrine/deprecations' => 'v0.5.3@9504165960a1f83cc1480e2be1dd0a0478561314',
   'doctrine/event-manager' => '1.1.1@41370af6a30faa9dc0368c4a6814d596e81aba7f',
-  'doctrine/inflector' => '2.0.3@9cf661f4eb38f7c881cac67c75ea9b00bf97b210',
+  'doctrine/inflector' => '2.0.4@8b7ff3e4b7de6b2c84da85637b59fd2880ecaa89',
   'handmadeweb/hookable-actions-filters' => '1.0.0@3ff828e2faa9cbcc72b3ce940ff5b6cf968a9b1c',
-  'illuminate/bus' => 'v8.52.0@0b9722013b908a67e9b815a3bad4f49e25828f7b',
-  'illuminate/cache' => 'v8.52.0@7b16b5c4b5961aad0b3f43a8a6e22af872375099',
-  'illuminate/collections' => 'v8.52.0@78d853243fc046f83a1d2b1e60420257d3e732e4',
-  'illuminate/container' => 'v8.52.0@382959676d85583f0e8fdd248bceb4b8762dc1ed',
-  'illuminate/contracts' => 'v8.52.0@199fcedc161ba4a0b83feaddc4629f395dbf1641',
-  'illuminate/database' => 'v8.52.0@dcfc3934731a7c4bbedc6a2a525da729e93e1861',
-  'illuminate/events' => 'v8.52.0@fe1785f12a65413bf3bed999ca7dd110ce4a0ac3',
-  'illuminate/filesystem' => 'v8.52.0@f33219e5550f8f280169e933b91a95250920de06',
-  'illuminate/macroable' => 'v8.52.0@300aa13c086f25116b5f3cde3ca54ff5c822fb05',
-  'illuminate/pipeline' => 'v8.52.0@23aeff5b26ae4aee3f370835c76bd0f4e93f71d2',
-  'illuminate/support' => 'v8.52.0@ee397b851a411ad490363a47df7476a24f93ca2e',
-  'illuminate/view' => 'v8.52.0@fd894237a3d793eca55bc71ff6317fae1bfe1856',
-  'nesbot/carbon' => '2.51.1@8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922',
-  'psr/container' => '1.1.1@8622567409010282b7aeebe4bb841fe98b58dcaf',
+  'illuminate/bus' => 'v8.73.1@be400399687b97d5558a224e970060fd5d5f2735',
+  'illuminate/cache' => 'v8.73.1@37c66605ca9d53b157c327d98d6a2a960fcbbd96',
+  'illuminate/collections' => 'v8.73.1@bfb57bc1863689058706eb41287b7ad523d74403',
+  'illuminate/container' => 'v8.73.1@6ac391bb27391706c5f921b85060aa2c4ca03fae',
+  'illuminate/contracts' => 'v8.73.1@b0886ec05a63b204634d64d0b39d5b78a7c06f81',
+  'illuminate/database' => 'v8.73.1@fb71b783458e1e0db6ab19de31ad3523a312726f',
+  'illuminate/events' => 'v8.73.1@b7f06cafb6c09581617f2ca05d69e9b159e5a35d',
+  'illuminate/filesystem' => 'v8.73.1@a7bc30dac4e27dbeb37b026f3dbaee13bd578861',
+  'illuminate/macroable' => 'v8.73.1@aed81891a6e046fdee72edd497f822190f61c162',
+  'illuminate/pipeline' => 'v8.73.1@23aeff5b26ae4aee3f370835c76bd0f4e93f71d2',
+  'illuminate/support' => 'v8.73.1@05b82a3fb311c4a3a40edfc8540463d576d7e65e',
+  'illuminate/view' => 'v8.73.1@cdc88707b86eb9139e350a4fd53ab8e4a32c03f8',
+  'nesbot/carbon' => '2.54.0@eed83939f1aed3eee517d03a33f5ec587ac529b5',
+  'psr/container' => '1.1.2@513e0666f7216c7459170d56df27dfcefe1689ea',
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
-  'symfony/console' => 'v5.3.6@51b71afd6d2dc8f5063199357b9880cea8d8bfe2',
+  'symfony/console' => 'v5.3.10@d4e409d9fbcfbf71af0e5a940abb7b0b4bad0bd3',
   'symfony/deprecation-contracts' => 'v2.4.0@5f38c8804a9e97d23e0c8d63341088cd8a22d627',
-  'symfony/finder' => 'v5.3.4@17f50e06018baec41551a71a15731287dbaab186',
+  'symfony/finder' => 'v5.3.7@a10000ada1e600d109a6c7632e9ac42e8bf2fb93',
   'symfony/polyfill-ctype' => 'v1.23.0@46cd95797e9df938fdd2b03693b5fca5e64b01ce',
   'symfony/polyfill-intl-grapheme' => 'v1.23.1@16880ba9c5ebe3642d1995ab866db29270b36535',
   'symfony/polyfill-intl-normalizer' => 'v1.23.0@8590a5f561694770bdcd3f9b5c69dde6945028e8',
@@ -65,13 +65,13 @@ final class Versions
   'symfony/polyfill-php73' => 'v1.23.0@fba8933c384d6476ab14fb7b8526e5287ca7e010',
   'symfony/polyfill-php80' => 'v1.23.1@1100343ed1a92e3a38f9ae122fc0eb21602547be',
   'symfony/service-contracts' => 'v2.4.0@f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb',
-  'symfony/string' => 'v5.3.3@bd53358e3eccec6a670b5f33ab680d8dbe1d4ae1',
-  'symfony/translation' => 'v5.3.4@d89ad7292932c2699cbe4af98d72c5c6bbc504c1',
+  'symfony/string' => 'v5.3.10@d70c35bb20bbca71fc4ab7921e3c6bda1a82a60c',
+  'symfony/translation' => 'v5.3.10@6ef197aea2ac8b9cd63e0da7522b3771714035aa',
   'symfony/translation-contracts' => 'v2.4.0@95c812666f3e91db75385749fe219c5e494c7f95',
-  'symfony/var-dumper' => 'v5.3.6@3dd8ddd1e260e58ecc61bb78da3b6584b3bfcba0',
+  'symfony/var-dumper' => 'v5.3.10@875432adb5f5570fff21036fd22aee244636b7d1',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
-  'woocommerce/action-scheduler' => '3.2.1@3c24064f115cd55e972d73d5d48f14133ac60b0d',
-  '__root__' => 'dev-master@5deaccf8b72be68c6728a25559df68d87d2389d4',
+  'woocommerce/action-scheduler' => '3.4.0@3218a33ff14b968f8cb05de9656c2efa1eeb1330',
+  '__root__' => 'dev-main@290e8dfc43077930dc6734a2c362502ef4878193',
 );
 
     private function __construct()
@@ -86,7 +86,7 @@ final class Versions
      */
     public static function rootPackageName() : string
     {
-        if (!class_exists(InstalledVersions::class, false) || !(method_exists(InstalledVersions::class, 'getAllRawData') ? InstalledVersions::getAllRawData() : InstalledVersions::getRawData())) {
+        if (!self::composer2ApiUsable()) {
             return self::ROOT_PACKAGE_NAME;
         }
 
@@ -104,7 +104,7 @@ final class Versions
      */
     public static function getVersion(string $packageName): string
     {
-        if (class_exists(InstalledVersions::class, false) && (method_exists(InstalledVersions::class, 'getAllRawData') ? InstalledVersions::getAllRawData() : InstalledVersions::getRawData())) {
+        if (self::composer2ApiUsable()) {
             return InstalledVersions::getPrettyVersion($packageName)
                 . '@' . InstalledVersions::getReference($packageName);
         }
@@ -116,5 +116,26 @@ final class Versions
         throw new OutOfBoundsException(
             'Required package "' . $packageName . '" is not installed: check your ./vendor/composer/installed.json and/or ./composer.lock files'
         );
+    }
+
+    private static function composer2ApiUsable(): bool
+    {
+        if (!class_exists(InstalledVersions::class, false)) {
+            return false;
+        }
+
+        if (method_exists(InstalledVersions::class, 'getAllRawData')) {
+            $rawData = InstalledVersions::getAllRawData();
+            if (count($rawData) === 1 && count($rawData[0]) === 0) {
+                return false;
+            }
+        } else {
+            $rawData = InstalledVersions::getRawData();
+            if ($rawData === null || $rawData === []) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

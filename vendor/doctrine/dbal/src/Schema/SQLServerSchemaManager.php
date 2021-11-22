@@ -6,7 +6,6 @@ use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Platforms\SQLServer2012Platform;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\Deprecations\Deprecation;
-use PDOException;
 
 use function assert;
 use function count;
@@ -79,6 +78,13 @@ SQL
                 }
 
                 break;
+
+            case 'varbinary':
+                if ($length === -1) {
+                    $dbType = 'blob';
+                }
+
+                break;
         }
 
         if ($dbType === 'char' || $dbType === 'nchar' || $dbType === 'binary') {
@@ -100,7 +106,7 @@ SQL
             'comment'       => $tableColumn['comment'] !== '' ? $tableColumn['comment'] : null,
         ];
 
-        if ($length !== 0 && ($type === 'text' || $type === 'string')) {
+        if ($length !== 0 && ($type === 'text' || $type === 'string' || $type === 'binary')) {
             $options['length'] = $length;
         }
 
@@ -247,12 +253,6 @@ SQL
 
         try {
             $tableIndexes = $this->_conn->fetchAllAssociative($sql);
-        } catch (PDOException $e) {
-            if ($e->getCode() === 'IMSSP') {
-                return [];
-            }
-
-            throw $e;
         } catch (Exception $e) {
             if (strpos($e->getMessage(), 'SQLSTATE [01000, 15472]') === 0) {
                 return [];
